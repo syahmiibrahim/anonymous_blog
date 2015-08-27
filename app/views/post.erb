@@ -15,5 +15,10 @@
         <% end %>
       </p>
     <% end %>
+    <p>
+      Actions:
+      <a href="/post/<%= @post.id %>/edit">Edit</a> |
+      <a href="/post/<%= @post.id %>/delete" onclick="return confirm('Are you sure?')">Delete</a>
+    </p>
   </div>
 </div>

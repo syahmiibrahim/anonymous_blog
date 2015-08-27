@@ -10,7 +10,7 @@ class Tag < ActiveRecord::Base
   def self.create_tag (string_tags)
 
     arr_tags_obj = []
-    arr_tags = string_tags.gsub(/\s+/, "").split(",")
+    arr_tags = string_tags.gsub(/\s+/, "").gsub(/^,*|(?<=,),|,*$/, "").split(",")
 
     arr_tags.each do |t|
       if Tag.exists?(tag: t)
