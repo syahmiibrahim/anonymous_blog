@@ -13,7 +13,7 @@
       <% unless post.tags.count == 0 %>
         <p>
           Tags: <% post.tags.each do |t| %>
-          <span class="badge"><%= t.tag %></span>
+          <a href="/tag/<%= t.tag %>"><span class="badge"><%= t.tag %></span></a>
           <% end %>
         </p>
       <% end %>
