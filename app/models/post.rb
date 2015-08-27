@@ -3,6 +3,7 @@ class Post < ActiveRecord::Base
   has_many :posttags
   has_many :tags, through: :posttags
 
-  validates :title, presence: true
-  validates :body, presence: true
+  validates :post_title, presence: true
+  validates :post_body, presence: true
+
 end

@@ -20,6 +20,22 @@
   <title></title>
 </head>
 <body>
-  <%= yield %>
+  <nav class="navbar navbar-default navbar-static-top">
+    <div class="container">
+      <div class="navbar-header">
+        <a class="navbar-brand" href="/">
+          Anonymous Blog
+        </a>
+      </div>
+      <a href="/post/new" class="btn btn-default navbar-btn navbar-right">New Post</a>
+    </div>
+  </nav>
+  <div class="container">
+
+    <h1><a href="/">Anonymous Blog</a></h1>
+
+    <%= yield %>
+
+  </div>
 </body>
 </html>

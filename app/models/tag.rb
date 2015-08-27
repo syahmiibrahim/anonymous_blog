@@ -7,6 +7,22 @@ class Tag < ActiveRecord::Base
 
   before_save :downcase_tag
 
+  def self.create_tag (string_tags)
+
+    arr_tags_obj = []
+    arr_tags = string_tags.gsub(/\s+/, "").split(",")
+
+    arr_tags.each do |t|
+      if Tag.exists?(tag: t)
+        arr_tags_obj << Tag.find_by(tag: t)
+      else
+        arr_tags_obj << Tag.create(tag: t)
+      end
+    end
+
+    arr_tags_obj
+
+  end
 
   private
 
