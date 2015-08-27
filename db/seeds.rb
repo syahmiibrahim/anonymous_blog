@@ -4,7 +4,7 @@
 
 1.times do
   @post = Post.create(post_title: Faker::Book.title, post_body: Faker::Lorem.paragraphs.join("\r\n"))
-  @tag = Tag.create(tag: "Random")
+  @tag = Tag.create(tag: Faker::Hacker.noun)
 
   @post.tags << @tag
 end
