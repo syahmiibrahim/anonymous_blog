@@ -1,20 +1,20 @@
 <!-- # show all posts with tags -->
 
-<% @tag.posts.order(created_at: :desc).each do |t| %>
-  <p><%= t.created_at %></p>
+<% @tag.posts.order(created_at: :desc).each do |tt| %>
+  <p><%= tt.created_at %></p>
   <div class="panel panel-default">
     <div class="panel-heading">
-      <h3 class="panel-title"><a href="/post/<%= t.id %>"><%= t.post_title %></a></h3>
+      <h3 class="panel-title"><a href="/post/<%= tt.id %>"><%= tt.post_title %></a></h3>
     </div>
     <div class="panel-body">
-      <p><%= t.post_body %></p>
+      <p><%= tt.post_body %></p>
     </div>
     <div class="panel-footer">
-      <p>Last updated: <%= t.updated_at %></p>
-      <% unless t.tags.count == 0 %>
+      <p>Last updated: <%= tt.updated_at %></p>
+      <% unless tt.tags.count == 0 %>
         <p>
-          Tags: <% t.tags.each do |tt| %>
-          <a href="/tag/<%= tt.tag %>"><span class="badge"><%= tt.tag %></span></a>
+          Tags: <% tt.tags.each do |t| %>
+          <a href="/tag/<%= t.tag %>"><span class="badge"><%= t.tag %></span></a>
           <% end %>
         </p>
       <% end %>
